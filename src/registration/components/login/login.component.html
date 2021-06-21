@@ -1,8 +1,20 @@
-<div class="main_container_box">
-  <form>
-    <input type="text" autocomplete="off" placeholder="User" />
-    <input type="text" autocomplete="off" placeholder="Password" />
-    <p>Dont have an account? Register for free here</p>
-    <button>Login</button>
-  </form>
+<div
+ *ngIf="isRegistered"
+  class="main_container_box">
+  <div class="login_form">
+    <input type="text" autocomplete="off" placeholder="User"  />
+    <input type="password" autocomplete="off" placeholder="Password" />
+    <p>Dont have an account? Register for free <span (click)="register()" ><b >here</b></span></p>
+    <button
+    [routerLink]="['hoteles']"
+    (click)="login()"
+    >Login</button>
+  </div>
 </div>
+
+<div *ngIf="!isRegistered">
+  <app-registration
+  (onRegister)="register()"
+  [isRegistered]="isRegistered"></app-registration>
+</div>
+

@@ -1,1 +1,12 @@
-<p>registration works!</p>
+<div
+  class="main_container_box">
+  <div class="login_form">
+    <h3>Register by filling out the form</h3>
+    <input type="email" autocomplete="off" placeholder="E-mail"  />
+    <input type="password" autocomplete="off" placeholder="Password" />
+    <input type="password" autocomplete="off" placeholder="RepeatPassword" />
+    <button
+    (click)="register()">Create Account</button>
+  </div>
+</div>
+<h3 *ngIf="registered"> Account Created Successfully!</h3>

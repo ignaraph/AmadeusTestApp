@@ -1,9 +1,12 @@
-<div class="main_app_container">
-
+<div
+  *ngIf="logged"
+  class="main_app_container">
   <h1>Amadeus App</h1>
+  <app-login
+    (onLogIn)="logIn()"
+  ></app-login>
+</div>
 
-
-
-
-  <app-login></app-login>
+<div>
+  <router-outlet></router-outlet>
 </div>

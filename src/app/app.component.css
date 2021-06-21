@@ -1,6 +1,10 @@
 
 .main_app_container {
   background-color: aquamarine;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
   height:100%;
   width: 100%;
   margin:0;
@@ -9,7 +13,6 @@
 
 h1 {
   text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-top: 2rem;
   font-size: 6rem;
   color:#fff;
