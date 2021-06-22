@@ -3,8 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RegistrationModule } from '../registration/registration.module';
+import { RegistrationModule } from './registration/registration.module';
 import { HotelesModule } from './hoteles/hoteles.module';
+import { HotelesInterceptorService } from './hoteles/services/hotelesInterceptor.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,11 @@ import { HotelesModule } from './hoteles/hoteles.module';
     RegistrationModule,
     HotelesModule,
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: HotelesInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
