@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { RegistrationModule } from './registration/registration.module';
 import { HotelesModule } from './hoteles/hoteles.module';
 import { HotelesInterceptorService } from './hoteles/services/hotelesInterceptor.service';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,6 +17,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     AppRoutingModule,
     RegistrationModule,
     HotelesModule,
+    HttpClientModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

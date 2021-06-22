@@ -1,1 +1,15 @@
-<p>hoteles-listado works!</p>
+<h1>Mira los Hoteles que tenemos para ofrecerte en Madrid!</h1>
+<button (click)="filterByRating(3)">
+  Muestra solo 3 estrellas
+</button>
+<button (click)="filterByRating(4)">
+  Muestra solo 4 estrellas
+</button>
+<button
+  (click)="goBack()"
+  *ngIf="!isBack">
+  Volver atras...
+</button>
+<div>
+      <p *ngFor="let hotel of hoteles">{{hotel.hotel.name}} <b>{{hotel.hotel.rating | number}} stars</b></p>
+</div>
